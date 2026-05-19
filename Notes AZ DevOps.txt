@@ -1,0 +1,213 @@
+Azure DevOps Engineer AZ400.
+
+Agenda:
+==========
+Introduction 
+and Ur Details
+What is DevOps?
+Syllabus
+Pre-Requisites
+Q/A
+
+Introduction:
+===============
+Chaithanya 7+ years of IT exp
+Area of Exp: Cloud, DevOps, AI.
+Microsoft Technlogies. DBs, Python. 
+MCA 2019 VIT Chennai.
+
+CSE
+
+What is DevOps?
+====================
+automation
+Development + Operation
+Building secure and Deploying websites in cloud is known as DevOps
+Testing + automation + operations and deploying them in cloud
+Collaboration of all operations
+Automating tasks by communicating with the development and operations team
+a collaborative approach that brings software developers and IT operations teams together
+managing software faster and more smoothly by making development and operations/infrastructure teams work together
+Continuous Integration and Continuous Deployment
+streamline repetitive tasks
+
+
+=======================================
+UserStory/UseCase:
+=====================
+A company want to launch a Food Delivery Web Application. (Business)
+Devs	-> Writing the code
+Testers	-> checking bugs,
+Operations-> Deploy the Application( Installing) to Servers
+
+Business they want fast releases
+
+But think of Everything is manual, slow, and full of confusion.
+
+
+
+Mobile Phone
+20 K Budget
+
+Amazon  -> Same Mobile -> 20 K
+Flipkart-> Same Mobile -> 20 K
+
+Which one will u prefer to buy? What are the Reasons do u have?
+
+Rating
+Trust
+Price
+Quality
+Delivery Time?
+
+Faster Delivery
+
+U are Hungry?
+Ordered Biriyani ->Deliver the food 45 Mins -> Zomato/Swiggy
+But ur food delver very lately -> 90 Mins
+
+Will u accept / reject?
+
+
+SDLC
+	2 Teams 
+	Dev + Ops
+
+If I want to build Ecommerce Application like Flipkart.
+
+Development Team:
+------------------
+1) Planning:
+- Requirements, how my app will looks, how many teams/members, desinign, Budget, 
+- Business Analyst, Team Lead, Stakeholders.
+- Tech Stack - FE,BE,DB 
+
+2) Code:
+- Implementation of Planning, which PL u decided, 
+- Developers Will write the code as per Plan 
+
+3) Build:
+- Syed
+Writen some Program
+in C/Java
+One Program -> Test.c/Test.Java
+
+Syed Resume
+
+Vijayendra
+Check What is the Program
+Test.c/Test.Java
+Syed Resume -> Open this file -> Format PDF/Word -> Software/App
+
+
+Compiling/Converting Source code into Executable Format -> Artifacts (.exe, .jar, .war, .ear, .dmg)
+Will called as Build Engineers.
+
+4) Test:
+- Automation/Manual Scripts
+Tools like Selenium, JFrog, Postman, .....
+- Testers will write the scripts and check the executable files.
+- Make the application into bug/error free.
+- Once everything passes then executable files handover to Operations Team.
+
+Operations Team:
+----------------
+5) Deploy:
+- Deploying/Installing Executable Files in Servers.
+- Operation Engineers / Release Engineers
+
+6) Operate: 
+- After deployment/installation app must RUN everyday.
+- Responsiblieits:
+	Making Server Alive, Scaling INfra,....Troubleshooting...
+
+7) Monitor:
+- Continoulsy watching the application and infra helath
+- CPU/Memory/Storage usage, Errors, Downtime, Security, user activites. 
+
+========================================================================================
+VIT EC Platform.
+May-1
+Plan 					Business Anal, Team Lead, Stakeholders -> May-20
+	Login, Home, Subject
+
+Code  
+	Login, Home, Subject
+
+Build
+	Login, Home, Subject
+Exe
+
+Testing
+	Login, Home, Subject
+Exe
+
+Release 
+	Login, Home, Subject
+	Version-1 Should Be released -> Business Anal, Team Lead, Stakeholders -> May-20
+
+Deploy
+	Login, Home, Subject
+	Version-1
+Operate
+	Login, Home, Subject
+	Version-1
+Monitor
+	Login, Home, Subject
+	Version-1
+Collect the feedback Business Anal, Team Lead, Stakeholders -> May-20
+Subject facing some Errors  -> Subject to be Updated
+Business Anal, Team Lead, Stakeholders -> May-20 -> Preperating for Payment, Admission, Attendance
+
+Collect the feedback Business Anal, Team Lead, Stakeholders -> June-10
+Subject facing some Errors  -> Subject to be Updated
+Business Anal, Team Lead, Stakeholders -> May-20 -> Preperating for Payment, Admission, Attendance
+
+Version-2
+
+Planing
+Code
+b....
+.....
+/.....
+
+
+Waterfall 
+Payment, Admission, Attendance, FaceIDs
+7 Steps.. 
+
+Agile:   Dividing into chunks-> Sprint (2-4 Weeks) - 10-20 Days
+Payment, 1.1
+7 Steps.. 
+
+Admission 1.2
+7 Steps.. 
+
+Attendance, 1.3
+7 Steps.. 
+
+FaceIDs  1.4
+7 Steps.. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
