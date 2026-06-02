@@ -1,0 +1,213 @@
+DevOps Lifecycle:
+
+PCBTRDOM Stages
+
+Plan Gathering requirements 
+	which people BA, TL, Stakeholders, Product Owner.
+	How much duration, team size, PL, Features, Arch, ......
+
+Design -> Blue of your application/software /product.
+
+Code -> PL -> Implement
+
+
+What is a Version Control System?
+
+-> Tracks and Manages code changes
+-> Automatically records every change in a special database
+-> Allows reviewing older versions of code
+-> Enable comparing changes between versions
+-> Provides rollback to stable state if issues occur
+
+This is the process of maintaining multiple versions of the code.
+All the team members upload their code(check in/pushing code) into the remote version controlling system. 
+The VCS accepts the code uploads from multiple team members and integrates it so that when the other
+team members download (pulling the code) the code they will be able to see the entire work done by the team.
+
+VCS also preserve older and later versions of the code. 
+so that any time we can switch which ever version we want.
+
+VCS also keep a track of who is making what kind of changes.
+
+
+VCS's are categorized into 2 types:
+1. Centralized Version Controlling
+	It can store code on a Single Repo. Tool: SVN
+2. Distributed Version Controlling
+	It can store code on a Multiple Repo. Tool: Git
+
+Rollback: Going back to Previous Version of Application/Software.
+
+Centralised Version controlling
+-----------------------------------
+Here we have a remote server(code repository) into which all the team 
+members check in the code and all the features of version controlling
+are implemented in this remote server
+
+ Distributed version controlling
+-------------------------------------
+Here we have a local repository installed on every team members machines
+where version controlling happens at the level of individual team members
+form where it is uploaded into a remote server where version controlling 
+happens for the entire team
+
+====================================================================
+Setting up git on Windows
+-------------------------------
+1 Download git from
+  https://git-scm.com/downloads
+
+2 Install it
+
+3 Open gitbash and execute the git commands
+
+======================================================================
+Setting up git in ubuntu linux servers
+--------------------------------------------
+1 Update the apt repository
+  sudo apt-get update
+
+2 Install git
+  sudo apt-get install -y git
+
+
+
+Git: 
+--------
+-> Distributed Version Control System
+-> Created By Linus Torvalds.
+-> using C Language.
+-> it is platform independent, free and Open-source.
+-> Junio C Hamono
+-> it came on the year 2005. 
+-> 3rd generation of VCS.
+
+
+Git vs GitHub:
+===============
+
+
+Git Stages / Core Architecture:
+=====================================
+on the local machine git uses 3 sections
+1. Working Directory
+2. Stagging Area
+3. Local Repository
+
+Working directory is the location where all the code is created
+Initially all the files present here are called as untracked files
+
+Stagging area is the location where file indexing happens and it 
+is the buffer area of git and the files are called as indexed files
+
+Local repository is where version controlling happens and the files
+are called as commited files
+
+
+
+Basic Commands:
+================
+
+Configure user and email globally for all users on a system:
+
+git config --global --list
+
+git config --global user.name "Chaithanya G"
+git config --global user.email "chaithanya2996@gmail.com"
+
+git config --global --list
+----------------------
+user.name=Chaithanya G
+user.email=chaithanya2996@gmail.com
+
+
+Working with GIT or Basic Commands of GIT:
+=============================================
+
+1. To initialize the working directory to accept git commands.
+Open "Git bash" cd Path_of_working_dir
+
+	git init
+
+This command will create a hidden folder called .git
+where it stores some configuration files for maintaining the local repository.
+
+2. To send the file from working directory to stagging area
+
+	git add filename
+
+   To send multiple file into stagging area
+
+	git add file1 file2 file3 file4 fil5
+
+   To send all files and folders into the stagging area
+
+	git add .
+
+3. To Unstage file
+bring files back from stagging to untracked section
+
+	git rm --cached filename
+		(or)
+	git reset filename
+
+4. To send files from stagging to local repository
+
+	git commit -m "some commit message" filenames/ (filenames not mention here, so every file will get committed i.e., moved to local repository)
+
+5. To see the status of the untracked and stagging section
+
+	git status
+
+6. To see the total commits that are done in Local Repository 
+
+	git log
+
+   To see the commit history in a simplified format
+
+	git log --oneline
+
+---------------------------------------------------------------
+
+.gitignore
+
+This is a Special File where we can store the private filenames.
+Any filename that is mentioned in .gitignore will no longer be accessed by git
+
+1. create few file
+
+	touch file1 file2 file3
+
+2. check the status of git
+
+	git status
+
+   it will show all the 3 files as untracked files
+
+3. create a hidden file .gitignore and enter the filenames
+
+	cat > .gitignore 
+	file1
+	file2
+	file3
+
+   To come out of cat command press ctrl+d (EOF)
+
+4. check the status of git
+
+	git status
+
+   it will no longer show the above created 3 files as untracked.
+
+
+
+
+
+
+
+
+
+
+
+
+

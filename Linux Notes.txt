@@ -1,0 +1,921 @@
+Linux Notes:
+=============
+History of Unix and Linux
+
+Game : Space war game
+
+DOS : single user single processer
+windows : single user multi processer
+
+Unix : Ken Thompson Bell Labs in the late 1960s and early 1970s.
+
+Minix : In the early 1980s, Professor Andrew S. Tanenbaum created a small Unix-like operating system called Minix
+
+Linux :  In 1991, a 21-year-old student named Linus Torvalds
+
+The name Linux is a combination of his first name, Linus, and Unix
+
+Unix is licensed , Linux is FREE
+
+Linux is Open-Source
+Linux is Multi-User
+Linux is Multi-Tasking
+Linux is Secure (Strong Security Features and regular updates)
+Linux is Portable (Can run in various hardware platforms)
+
+
+Linux File Hierarchy Structure
+============================
+
+Diagram
+
+The Linux File Hierarchy Structure or the Filesystem Hierarchy Standard (FHS) defines the directory structure and directory contents in Unix-like operating systems. It is maintained by the Linux Foundation.
+
+/(Root)        : Every single file and directory start from the root directory.
+/bin           : Contains binary executables.cat, ls, cp etc are here
+/boot         : Boot loader files, e.g., kernels, initrd.
+/dev         : Include terminal devices, usb, or any device attached to the system.
+/etc         : Contains configuration files required by all programs.
+/home        : Home directories for all users to store their personal files.
+/tmp         : Temporary files.
+
+
+
+Linux Commands
+=============
+
+1. File and Directory Operations Commands
+
+2. File Permission Commands
+
+3. File Compression and Archiving Commands
+
+4. Process Management Commands
+
+5. System Information Commands
+
+6. Networking Commands
+
+7. IO Redirection Commands
+
+8. Environment Variable Commands
+
+9. User Management Commands
+
+10. VI Shortcuts Commands:
+
+LOGGING AND AUDITING
+
+INSTALLING PACKAGES
+
+========================================
+
+Launch RedHat Linux EC2 instance and install MobaXterm
+
+sudo -s  - switch to root
+logout or ctrl d to logout
+
+sudo -i - switch to root
+
+sudo su - switch to root
+
+all three do the same work
+
+cat /etc/os-release  --> to check the which OS and Flavour
+
+
+
+
+
+1. File and Directory Operations Commands
+-----------------------------------------
+
+ls              : List files and directories.
+
+-l: Long format listing.
+-a: Include hidden files hidden ones
+-h: Human-readable file sizes.
+
+ls -al              : Displays files and directories with detailed information.
+ls -a               : shows all files and directories, including hidden
+ls -lh             : Displays file sizes in a human-readable format.
+ls -lt             : Displays files
+ls -ltr         : reverse sorting
+
+ls new*         : to list files starting with new
+
+
+-rw-r--r--. 1 root     root          0 Dec 21 13:39 file1
+drwxr-xr-x. 2 root     root          6 Dec 21 13:39 test
+
+- represent file
+d represent directory
+
+
+cd                : Change directory.
+touch filename            : to create a empty file
+pwd             : Print current working directory.
+mkdir            : Create a new directory.
+cd ..            : move back to one directory
+
+ mkdir hello
+
+rmdir foldername    : delete directory
+
+ rmdir hello
+
+rm        
+-r: Remove directories recursively.
+-f: Force removal without confirmation.
+
+rm            : deletes the file
+rm -r             : deletes the directory and its contents.
+rm -f            : forcefully deletes the file without confirmation.
+
+cp            : Copy files and directories.
+
+Ex:  cp file.txt file2.txt
+     cp file.txt /test/file.txt
+
+.            : Present location
+
+cp -r             : copies the directory “directory” and its contents to the specified destination.
+
+mv            : Move/rename files and directories.
+
+Ex: mv file1 testfolder/
+    mv file1 file5
+
+===================
+touch            : Create an empty file .
+
+Ex: touch file        : create single file
+    touch file{1..5}    : Create 5 files at a time
+
+=====================
+
+cat            : View the contents of a file.
+
+head            : Display the first few lines of a file.
+-n: Specify the number of lines to display.
+
+head file.txt       : Shows the first 10 lines of the file “file.txt”.
+head -n 5 file.txt     : Displays the first 5 lines of the file “file.txt”.
+
+tail            : Display the last few lines of a file.
+-n: Specify the number of lines to display.
+
+tail file.txt         : Shows the last 10 lines of the file “file.txt”.
+tail -n 5 file.txt     : Displays the last 5 lines of the file “file.txt”.
+
+
+=======================================
+sort             : Sorting the content in the file
+
+Ex: create a file with alphabets inside
+A
+C
+F
+B
+G
+
+    sort file.txt    : sorting content
+    sort -r file.txt     : reverse sort
+
+Ex: create a file with alphabets inside duplicates
+A
+A
+C
+F
+F
+B
+B
+G
+
+Removing duplicates
+
+============================
+
+sort file.txt | uniq
+
+split             : to split the files into multiple files
+
+Ex:  split -l 4 file.txt   --> it will split into multiple files with lines of 4
+     ls
+
+==============================
+
+cmp and diff [seeing 2 files are same or not and see the difference]
+
+--> create 2 files : file1 --> this is madhan sir, file2 --> this is madhan aws devops trainer
+
+Ex:   cmp file1 file2  --> it will show only files are same are not [cmp: EOF on file1 - if it shows like this, there is a diff]
+      diff file1 file2  ---> shows the difference
+      diff -u file1 file2  ---> shows line by line comparison
+
+=============================
+Coming to home directory
+
+Ex: if you are in some other directory say cd /etc/
+just do cd --> you will come to home directory . ~ shows home directory
+
+============================
+
+find            :
+-name: Search by filename.
+-type: Search by file type.
+
+find /path/to/search -name “*.txt”  : Searches for all files with the extension “.txt” in the specified directory.
+
+find /home/john -name 'file*'  :  Find files in /home/john that start with "file".
+
+Ex: find ./ -name test.txt  : in current directory ./ find test.txt
+
+========================
+
+
+touch file1    : to create a file
+ls/ll        : to list the files
+cat file1    : to show content of a file.
+more file1    : to show content of a file.
+cat > filename  : to insert the content to a file
+cat>>file1    : to append the content to a file.    
+cp file1 file3    : to copy content from file1 to file3
+mv file1 madhan    : to rename file1 to madhan
+rm file1    : to remove a file
+rm file1 -f    : to remove a file forcefully
+touch file{1..10}: to create file1 to file10
+rm * -f        : to remove all files
+wc -l file1    : to show the lines, words and characters of a file
+cat -n file1     : to print the line numbers
+
+=================
+history        : to print all the commands user used for the current session
+ Ex: history
+     history | grep word " : search for a word in history
+====================
+
+help        : help
+ Ex: ls --help
+man
+ Ex: man ls
+
+=====================
+
+which         : to see the executable path
+
+Ex: which ls
+
+====================
+
+bc    : calculator [yum install -y bc]
+
+==================
+cal    : calendar
+
+Ex: cal
+    cal APRIL 1986
+
+
+head file1    : to print top 10 lines of a file
+head -5 file1    : to print top 5 lines of a file
+head -12 file1    : to print top 12 lines of a file
+
+tail file1    : to print bottom 10 lines of a file
+tail -5 file1    : to print bottom 5 lines of a file
+tail -12 file1    : to print bottom 12 lines of a file
+
+
+
+pwd        : to print working directory
+mkdir dir1    : to create a folder
+cd dir1        : to switch to dir1
+cd ..        : to switch one folder back
+cd ../..        : to switch to multiple folders
+cd /        : switch to root directory , see many directories inside root
+
+Absolute path : entire path  Ex: cd /home/ec2-user/newdir/sampledir
+Relative Path : just directory name Ex: cd /newdir
+
+
+sudo -i        : to switch for root user
+who or w    : to show which user logged to our server
+ip addr/ifconfig: to show the ip address
+hostname -i    : to show the ip address
+hostname    : to show the hostname
+hostnamectl set-hostname madhan: to set hostname as madhan
+sudo -i        : to login to hostname
+hostname    : to show the hostname    
+clear              : to clear the screen
+
+=============================================
+System Information Commands
+============================
+
+uname -a         : Displays all system information.
+whoami             : Shows the current username
+df -h             : Displays disk space usage in a human-readable format.
+fdisk -1        :
+du -sh directory/     : Provides the total size of the specified directory.
+free -h         : Displays memory usage in a human-readable format.
+uptime             : Shows the current system uptime.
+lscpu             : Provides detailed CPU information.
+cat /etc/os-release    : Show operating system information such as distribution name and version
+hostname        : name of the server
+date
+date +%D
+date +%T
+date +%H:%M
+
+
+rpm -qa | grep sql : Red Hat Package Manager To see application is installed or not in Linux machine
+
+rpm -qa | grep java
+rpm -qa | grep python
+
+dnf list installed    : This show all applications installed in machine
+
+dnf list installed | grep java
+
+yum list available     : This show all packages installed in machine
+
+
+
+Networking Commands
+===================
+
+ifconfig         : Shows the details of all network interfaces.
+yum install net-tools .
+
+ping google.com     : Sends ICMP echo requests to “google.com” to check connectivity.
+netstat -tuln         : Shows all listening TCP and UDP connections.
+ssh user@hostname     : Initiates an SSH connection to the specified hostname.
+
+wget http://example.com/file.txt  : Downloads “file.txt” from the specified URL.
+
+wget -o yourownnamefile.txt URL_of_file  : if you want to download and have with your desired name
+
+curl http://example.com        : Retrieves the content of a webpage from the specified URL.
+
+Calling API's using CURL command
+
+curl http://numbersapi.com/random
+
+Check port is open or not
+----------------------
+
+telnet IP port
+netstat -putan | grep 80 -- see if port 80 is opened or not
+
+
+
+
+Environment Variable Commands
+==============================
+Environment variables in Linux are dynamic values that can impact how programs and processes run on a computer
+
+printenv
+
+export VARIABLE_NAME=value             :  Sets the value of an environment variable.
+Ex: export course=devops
+
+echo $VARIABLE_NAME            :  Displays the value of a specific environment variable.
+Ex: echo $course
+
+unset VARIABLE_NAME            : Unsets or removes an environment variable.
+Ex: unset course
+
+Lets set JAVA HOME PATH
+-----------------------
+
+All the Environment variables and path are present in printenv
+
+Lets install java
+
+printenv | grep JAVA_HOME -- no java home
+
+java --version
+
+yum install java   -- it will install latest java 17
+yum install java-11-openjdk  -- it will install java 11
+
+java --version
+
+Now i want to use java 11
+
+Java is installed in /usr/lib/jvm
+
+cd /usr/lib/jvm
+ls
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.25.0.9-3.el9.x86_64"
+
+printenv  -- it shows JAVA_HOME
+
+export PATH=$JAVA_HOME/bin:$PATH    
+
+ [he PATH variable is an environment variable that tells the system where to look for executable files when a user enters a command in the terminal:]
+
+java --version -- now it is java 11
+
+
+What we did was temporary , if you logout this export variable is gone, to make it permanent ./bashrc
+
+How to add a new Env Variable permanently on Linux?
+
+Be in Home directory : cd
+
+ls -al
+
+vi .bashrc
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.25.0.9-3.el9.x86_64"
+
+source .bashrc
+
+
+======================
+
+awk command - Print specific column from csv file
+
+download sample csv file from GitHub
+https://gist.github.com/kevin336/acbb2271e66c10a5b73aacf82ca82784/archive/e38afe62e088394d61ed30884dd50a6826eee0a8.zip
+
+unzip e38afe62e088394d61ed30884dd50a6826eee0a8.zip
+
+awk -F , '{print $2}' employees.csv   --> this will print the second column
+
+awk '/ST_CLERK/ {print}' employees.csv  --> this will print ST_CLERK details
+
+==============================
+
+
+
+User Management Commands
+=========================
+USERS & GROUPS:
+---------------
+
+AUTHENTICATION: TO LOGIN   -- > create user and set password
+AUTHORIZATION: PERMISSION TO WORK  -- > add him to the sudo file
+
+
+root: will have all permissions
+ec2-user: not have all permissions
+
+
+useradd madhan        : to create a user called madhan
+passwd madhan        : to set password for the user
+cat /etc/passwd        : to list the users
+
+su - madhan        : to switch to madhan user
+useradd pushpa         : permissions denied
+now try sudo useradd pushpa : madhan is not in the sudoers file
+
+be in root, do ctrl d or logout or exit
+
+visudo
+
+go to line number 100, :100 --> copy - yy, paste - p
+root    ALL=(ALL)       ALL
+madhan    ALL=(ALL)       ALL
+
+su - madhan
+
+Now, sudo useradd pushpa : it works
+
+cat /etc/passwd --> it will show pushpa
+
+groupadd devops        : to create a group called devops
+cat /etc/group        : to list a group
+usermod -aG devops madhan: to add user to a group
+
+useradd jhon
+userdel john        : Delete the john account.
+
+
+
+who            :  Show who is currently logged in.
+
+last            :  Show the recent login history of users.
+
+su – username          :    Switch to another user account with the user’s environment.
+
+w            : Show who is logged in and what they are doing.
+
+==========================================================================================================
+
+ls -ltr
+
+directory  user group others
+d          rwx   r-x    r-x
+
+r - read = 4
+w - write = 2
+x - execute = 1
+
+
+        LEGEND
+        U = User
+        G = Group
+        W = World
+
+        r = Read
+        w = write
+        x = execute
+        - = no access
+
+
+To change the permission use chmod
+
+touch test.txt
+ls -ltr
+
+-rw-r--r--.  1 root root     0 Dec 22 07:59  test.txt
+
+The above has 644 (rw=4+2 , r=4, r=4)
+
+         U   G   O
+        rwx rwx rwx     chmod 777 filename
+        rwx rwx r-x     chmod 775 filename
+        rwx r-x r-x     chmod 755 filename
+        rw- rw- r--     chmod 664 filename
+        rw- r-- r--     chmod 644 filename
+
+chmod 400 file1
+
+INSTALLING PACKAGES
+====================
+
+
+# Search for a package by keyword.
+yum search keyword
+
+# Install package.
+yum install package
+
+# Display description and summary information about package.
+yum info package
+
+# Remove/uninstall package.
+yum remove package
+
+
+ LOGGING AND AUDITING
+=======================
+
+# Display logs stored in the systemd journal.
+journalctl
+
+# Display logs for a specific unit (service).
+journalctl -u servicename
+
+lscpu -- CPU Info
+lsmem - -mem info
+
+
+fdisk -l  -- disk information
+lsblk
+
+ifconfig  -- to see the ip
+ip addr
+hostname -i
+
+
+
+WinSCP Setup | Transferring Files from Windows to Linux(Redhat)
+=====================================================
+
+Install WinSCP --> click on newtab
+
+Open WinSCP --> SFTP --> Hostname=IP , Port = 22, username = ec2-user, Advanced --> authentication --> select ppk
+Transfer files
+
+
+Transfer files between Linux Servers using SCP command
+===================================================
+
+SCP - Secure Copy Protocol , is a command line tool used for securely transferring files between local and a remote host or between
+2 remote hosts using SSH for Encryption and authentication
+
+Syntax
+======
+scp /local/file username@remotehost:/path/
+
+scp -i key-pair-name.pem /path/my-file.txt ec2-user@privateip:/path/
+
+Launch another RedHat Linux EC2
+
+create a pem file  vi MyKey.pem
+chmod 400 pemfile
+
+scp -i MyKey.pem file1 ec2-user@172.31.19.242:/tmp/
+
+or
+
+scp -i MyKey.pem test.zip ec2-user@172.31.6.82:/home/ec2-user/
+
+scp -r -i MyKey.pem test/ ec2-user@172.31.6.82:/home/ec2-user/  ---> for dir recursive
+
+Login to another EC2 and check the files.
+
+=============================================================
+Transfer files between Linux Servers using SCP command
+===================================================
+
+SCP - Secure Copy Protocol , is a command line tool used for securely transferring files between local and a remote host or between
+2 remote hosts using SSH for Encryption and authentication
+
+Syntax
+======
+scp /local/file username@remotehost:/path/
+scp -i key-pair-name.pem /path/my-file.txt ec2-user@privateip:/path/
+
+How to do
+----------
+Launch another RedHat Linux EC2
+
+create a pem file  vi MyKey.pem
+copy paste the data
+
+chmod 400 pemfile
+
+touch file1
+
+mkdir test
+
+scp -i MyKey.pem file1 ec2-user@172.31.19.242:/tmp/
+
+scp -r -i MyKey.pem test/ ec2-user@172.31.6.82:/home/ec2-user/  ---> for dir recursive
+
+If you want to copy zip files
+-------------------------------
+scp -i MyKey.pem test.zip ec2-user@172.31.6.82:/home/ec2-user/
+
+Login to another EC2 and check the files.
+
+
+=================================================
+
+Setup Apache WebServer on Linux
+
+====================================================
+
+Launch RedHat Linux EC2 instance
+
+
+yum install httpd -y
+
+cat /etc/httpd/conf/httpd.conf   --- all apache configurations will be here (changing port, listen 80 or 8080)
+
+cd /var/www/html/
+
+vi index.html
+
+https://www.w3schools.com/howto/howto_css_contact_form.asp
+
+paste some sample html code
+
+systemctl status httpd
+systemctl start httpd
+
+
+================================================
+
+Launch RedHat Linux EC2 instance
+
+Setup Nginx on Linux as WebServer
+----------------------------
+
+What is nginx?
+
+It is a web-server that accepts requests via http/s and respond to display website content through storing, processing, and delivering webpages to users
+
+This can also be used as Reverse Proxy, Load Balancer etc
+
+sudo -s
+
+yum install -y nginx
+
+nginx -version
+
+systemctl status nginx
+
+cat /etc/nginx/nginx.conf  -- contains nginx configurations
+cd /usr/share/nginx/html
+
+cat index.html
+
+Put IP in Browser
+
+cd /var/log/nginx/
+
+============================================================
+
+Setup Nginx on Linux as Reverse Proxy
+===========================================================
+
+What is a proxy server?
+
+In computer networking, a proxy server is a server application that acts as an intermediary between a client requesting a resource and the server providing that resource.
+
+What is a reverse proxy server?
+
+A proxy service which takes a client request, passes it on to one or more servers.
+Proxying is typically used to distribute the load among several servers,
+seamlessly show content from different websites,
+or pass requests for processing to application servers over protocols other than HTTP.
+
+Client ------> Reverse Proxy(EC2 with Nginx) -----> App Server(EC2 with httpd)
+
+Launch RedHat Linux EC2 instance having nginx reverse proxy and another server which has any website (httpd with index.html)
+
+Nginx EC2 instance - use previous machine remove nginx : yum remove nginx
+
+yum install -y nginx
+
+cd /etc/nginx/
+vi nginx.conf
+
+ location / {
+        proxy_pass http://172.31.23.194:80/;
+        }
+
+systemctl restart nginx
+
+Put nginx IP in browser, you get error
+
+check error in logs
+
+cd /var/log/nginx
+cat error.logs
+
+Permission denied) while connecting to upstream
+
+Solution
+-----
+list of all httpd SElinux Boolean
+getsebool -a | grep httpd
+setsebool httpd_can_network_connect on -P
+
+Put nginx IP in browser it will redirect to App Server
+
+
+
+What is Forward Proxy?
+-----------------------
+
+A forward proxy, also referred to as a “proxy server,” or simply a “proxy,” is a server that sits in front of one or more client computers and serves as a conduit between the clients and the internet. The forward proxy receives the request before sending it on from the client machine to the internet resource. On behalf of the client machine, the forward proxy then sends the request to the internet and returns the response.
+
+A forwards proxy is mostly used for:
+
+Client Anonymity
+Caching
+Traffic Control
+Logging
+Request/Response Transformation
+Encryption
+
+                             Forward Proxy                               Reverse Proxy
+
+Purpose     Provides anonymity and caching to clients     Improves server performance, load balancing, and security
+
+Location    Between the client and the internet             Between the internet and server
+
+Visibility    The client is aware of the proxy             The server is not aware of the proxy
+
+Configuration    The client must be configured to use proxy     Server must be configured to use proxy use
+
+Use cases     Bypassing content filters,
+                accessing restricted content                     Load balancing, caching, SSL/TLS offloading, web application firewall
+Examples     Squid, Proxy, Tor                             Nginx, Apache, HAProxy
+
+
+
+==================================
+Granting access to the server without a password.
+Launch Amazon Linux 2 -  2 Linux EC2 instances
+==========================================
+
+run commands on both Server-1 and Server-2
+
+sudo -i
+hostnamectl set-hostname server-1
+sudo -i
+
+## first set the password for root
+passwd root  
+
+set new password: root123456
+
+## enable all server to login as root
+
+vi /etc/ssh/sshd_config (38 & 61 uncomment both lines) PermitRootLogin yes | PasswordAuthentication yes
+systemctl restart sshd
+systemctl status sshd
+hostname -i -- to see the private ip
+
+On Server -1
+==========
+
+cd /
+
+ssh-keygen
+
+ls -al
+
+ll .ssh
+
+syntax:
+ssh-copy-id root@private ip of Server-2 -- > yes -- > password -- > ssh private ip -- > ctrl d
+
+
+ssh-copy-id root@172.31.17.111
+
+
+ssh root@172.31.17.111
+
+==================
+
+
+FTP Setup
+
+AMazon Linux 2 - Server 2 - FTP Server
+
+Client(FileZilla) ---------------> FTP ----------------> EC2 Server (vsftpd)
+
+
+First check if vsftpd service is installed or not
+
+rpm -qa | grep vsftpd
+
+yum install -y vsftpd
+
+cd /etc/vsftpd/
+
+Always good in real time to take backup of current file vsftpd.conf
+
+cp  vsftpd.conf vsftpd-bkp.conf
+
+vi vsftpd.conf
+
+anonymous_enable = NO   [Enable anonymous access if needed (default is NO):]
+local_enable=YES       [Allow local users to log in:]
+write_enable=YES        [Enable file uploads]
+chroot_local_user=YES   [Chroot users to their home directory (for security)]
+allow_writeable_chroot=YES  [Add this line]
+local_root=/home/ftpuser/ftp  [Add this line]
+
+
+pasv_enable=YES
+pasv_min_port=21000
+pasv_max_port=21010
+pasv_address=<your_public_ip>
+
+
+
+
+systemctl start vsftpd
+systemctl enable vsftpd
+
+Create FTP Users
+----------------
+sudo adduser ftpuser
+sudo passwd ftpuser
+
+Set permissions for the FTP directory:
+-------------------------------------
+
+sudo mkdir -p /home/ftpuser/ftp/files              [Create directory for file transfers]
+sudo chown -R ftpuser:ftpuser /home/ftpuser/ftp    [Changing ownership ftpuser is user and ftpuser is also a group]
+sudo chmod 755 /home/ftpuser                       [Changing permissions, giving full permissions to directory]
+sudo chmod 755 /home/ftpuser/ftp
+
+Create a writable subdirectory:
+------------------------------
+sudo chmod 755 /home/ftpuser/ftp/files
+
+Install firewalld
+---------------
+
+yum install -y firewalld
+
+systemctl restart firewalld
+
+sudo firewall-cmd --permanent --add-service=ftp
+sudo firewall-cmd --reload
+
+sudo firewall-cmd --permanent --add-port=21000-21010/tcp
+sudo firewall-cmd --reload
+
+sudo systemctl start vsftpd
+sudo systemctl enable vsftpd
+
+If SELinux is enabled, you might need to allow FTP access to user home directories:
+
+sudo setsebool -P ftp_home_dir 1
+
+
+sudo cat /var/log/vsftpd.log
+
+Open FileZilla --> Host=PublicIP, Username = ftpuser , password = root123456 port= 21
