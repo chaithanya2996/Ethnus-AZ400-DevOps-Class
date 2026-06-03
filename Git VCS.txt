@@ -200,7 +200,72 @@ Any filename that is mentioned in .gitignore will no longer be accessed by git
    it will no longer show the above created 3 files as untracked.
 
 
+=======================================================================================
+Git Branches:
+----------------
 
+Branching in Git:
+==================
+
+This is a feature of git using which we can separate branches for different functionalities
+and later merge them with main branch also known as master branch.
+This will help in creating the code in an Uncluttered way
+
+1. To see the list of local branches
+ 	git branch
+
+2. To see the list all branches local and remote
+	git branch -a
+
+3. To create a branch
+	git branch branch_name
+
+4. To move into a branch
+	git checkout branch_name
+
+5. To create a branch and also move into it
+	git checkout -b branch_name
+
+6. To merge a branch
+	git merge branch_name
+
+7. To delete a branch that is merged
+	git branch -d branch_name 
+   This is also called as soft delete
+
+8. To delete a branch that is not merged	
+	git branch -D branch_name
+   This is also known as hard delete
+
+============================================================================
+Note: Whenever a branch is create whatever is the commit history of the 
+parent branch will be copied into the new branch
+
+Note: Irrespective of, on which branch a file is created or modified git only
+considers form which branch it is committed and the file belongs to that
+committed branch only.
+
+
+=========================================================================
+Working on the GitHub
+========================================================================
+
+Downloading from Remote to Git Repository:
+===============================================
+
+This can be done in 3 Ways.
+
+1. git clone
+2. git fetch
+3. git pull
+
+git clone:
+----------
+This will download the entire remote repository from GitHub into individual developers machine 
+irrespective of whether that code is already present or not.
+
+syntax:
+	git clone remote_repo_url
 
 
 
