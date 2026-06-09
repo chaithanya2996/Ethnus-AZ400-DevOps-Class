@@ -1,0 +1,24 @@
+Cloud Services:
+Compute, Storage, IAM, Networking, Databases
+
+azure account
+azure devops account.
+
+portal.azure.com 	Azure Cloud
+aex.dev.azure.com	Azure DevOps URL
+
+git remote add origin https://vitdevops2996@dev.azure.com/vitdevops2996/Vit-DevOps/_git/python-vit
+git push -u origin --all
+
+
+create an azure devops account 
+create an project
+inside of the project create one azure repos with any name
+on ur laptop create some files, create some commits, try to push it into Azure Repos.
+create feature/develop branch and try to push it into azure repos
+and perform Pull Request(PR) in to master/main branch.
+
+Compute Section:
+How to add the disk (Local D/E drive in Windows/Linux)
+How to deploy a static website in Azure VM (windows/Linux).
+How to deploy a statis website in Azure Storage Account.
