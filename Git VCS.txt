@@ -267,6 +267,255 @@ irrespective of whether that code is already present or not.
 syntax:
 	git clone remote_repo_url
 
+git fetch
+==================
+This will download only the modified files but it will place
+them on a seperate branch called as "remote branch",we can go into
+this remote branch check if the modificatios are accpetable and then
+merge it with the main branch
+
+1 Open the github
+2 Go to the repository that we uploaded
+3 Select a file and edit it--->Click on commit changes
+4 Open git bash
+5 git fetch
+6 To see the name of remote branch
+  git branch -a
+7 To switch into this branch
+  git checkout branch_name_from_step6
+8 View the modified file
+  cat filename
+9 If these modifications are ok then merge with main branch
+  git checkout main
+  git merge branch_name_from_step6
+
+
+=====================================================================
+git pull
+===================
+This will download only the modified files and merge them with
+our local branches
+1 Open the github
+2 Go to the repository that we uploaded
+3 Select a file and edit it--->Click on commit changes
+4 Open git bash
+5 git pull
+  We can see the modified files on the main branch
+
+
+======================================================================
+Git Merge
+===============
+Merging always happens bases on the time stamps of the commits
+
+1 Create few commits on master
+  touch f1
+  git add .
+  git commit -m "a"
+  touch f2
+  git add .
+  git commit -m "b"
+
+2 Check the git commit history
+  git log --oneline
+
+3 Create a test branch and create few commits on it
+  git checkout -b test
+  touch f3
+  git add .
+  git commit -m "c"
+  touch f4
+  git add .
+  git commit -m "d"
+
+4 Check the commit history
+  git log --oneline
+
+5 Go back to master and create few more commits
+  git checkout master
+  touch f5
+  git add .
+  git commit -m "e"
+  touch f6
+  git add .
+  git commit -m "f"
+
+6 Check the commit history
+  git log --oneline
+
+9 Merge test with master
+  git merge test
+
+10 Check the commit history
+   git log --oneline
+
+=================================================================
+Git rebase
+===================
+This is called as fastforward merge where the commits coming from a 
+branch are projected as the top most commits on master branch
+
+1 Implement step1-6 from above scenario
+
+2 To rebase test with master
+  git checkout test
+  git rebase master
+  git checkout master
+  git merge test
+
+3 Check the commit history
+  git log --oneline
+
+
+
+======================================================================
+Git Cherrypicking
+=========================
+This is used to selectivey pick up certain commits and add them to the 
+master branch
+
+1 On master create few commits
+  a--->b
+
+2 Create a test branch and create few commits
+  git checkout -b test
+  a--->b--->c--->d--->e--->f--->g
+
+3 To bring only c and e commits to master
+  git checkout master
+  git cherry-pick c_commitid e_commitid
+
+
+
+=========================================================================
+Git reset 
+==============
+This is a command of git using which we can toggle between multiple
+versions of git and access whichever version we want
+
+Reset can be done in 3 ways
+1 Hard reset
+2 soft reset
+3 Mixed reset
+
+In hard reset HEAD simply points to an older commit adn we can see the 
+data as present at the time of that older commit
+
+1 Create few commits on master
+  a-->b--->c
+
+2 To jump to b commit from c
+  git reset --hard b_commit_id
+
+
+
+
+=======================================================================
+Git reset 
+==============
+This is a command of git using which we can toggle between multiple
+versions of git and access whichever version we want
+
+Reset can be done in 3 ways
+1 Hard reset
+2 soft reset
+3 Mixed reset
+
+In hard reset HEAD simply points to an older commit adn we can see the 
+data as present at the time of that older commit
+
+1 Create few commits on master
+  a-->b--->c
+
+2 To jump to b commit from c
+  git reset --hard b_commit_id
+
+------------------------------------------------------------------
+Soft reset will also move the head to an older commit but
+we will see the condition of the git repository as just one
+step prior to the c commit ie the files will be seen in the
+stagging area
+
+git reset --soft b_commitid
+
+--------------------------------------------------------------------
+Mixed reset also moves the head to an older commit
+but we will see the condition of git as 2 steps prior to the c commit
+ie the files will be present in the untracked/modified section
+
+git reset --mixed b_commitid
+
+
+
+
+==============================================================================
+
+===========================================================================
+Git stashing
+======================
+Stash is a section of git into which once the files are pushed 
+git cannot access them
+
+To stash all the files present in the stagging area
+git stash 
+
+To stash all files present in stagging area and untracked section
+git stash -u
+
+To stash all files present in stagging area,untracked section and .gitignore
+git stash -a
+
+To see the list of stases
+git stash list
+
+To unstash a latest stash
+git stash pop
+
+To unstash an older stash
+git stash pop stash@{stashno}
+====================================================================
+
+==============================================================================
+Git sqaush
+==============
+This is the process of merging multiple commits and making
+it look like a single commit.This can be done using the git rebase
+command
+
+1 Create a commit history
+  a --> b --> c --> d --> e --> f
+  HEAD is pointing to f commit
+
+Note: a commit is called as the "initial commit" and it cannot be
+   squashed
+
+In the above scenario we can sqaush only a max of 5 commits
+
+2 To squash
+  git rebase -i HEAD~5
+  This will open the top 5 commits in vi editor
+  For which ever commits we want to perform a squash opration
+  remove the word "pick" and replace it with "squash"
+
+3 Check the commit history
+  git log --online
+
+=====================================================================
+Git rebase can also rearrange the commit history order
+
+1 Create a commit history
+  a --> b --> c --> d --> e --> f
+  HEAD is pointing ti f commit
+
+2 To rearrange the commit history order
+  git rebase -i HEAD~5
+  Reaarange the commits in whatever order that we want
+
+3 Check the commit history now
+  git log --oneline
+
+========================================================================
+
 
 
 
