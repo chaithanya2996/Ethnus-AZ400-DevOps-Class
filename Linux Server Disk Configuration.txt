@@ -1,0 +1,75 @@
+After attaching the disk, connect via SSH.
+
+Check Available Disks
+lsblk
+
+Example:
+
+sda   30G
+└─sda1
+
+sdc  128G
+
+Here:
+
+sda = OS Disk
+sdc = New Data Disk
+Create Partition
+sudo fdisk /dev/sdc
+
+Inside fdisk:
+
+n  -> New Partition
+p  -> Primary
+1  -> Partition Number
+Enter
+Enter
+w  -> Write Changes
+Verify Partition
+lsblk
+
+Output:
+
+sdc
+└─sdc1
+Format Disk
+
+For EXT4:
+
+sudo mkfs.ext4 /dev/sdc1
+
+For XFS:
+
+sudo mkfs.xfs /dev/sdc1
+Create Mount Point
+sudo mkdir /datadisk
+Mount Disk
+sudo mount /dev/sdc1 /datadisk
+Verify
+df -h
+
+Example:
+
+Filesystem      Size Used Avail Mounted on
+/dev/sdc1       128G 1G   127G  /datadisk
+Permanent Mount (Important)
+
+Get UUID:
+
+sudo blkid
+
+Output:
+
+/dev/sdc1: UUID="1234-abcd"
+
+Edit fstab:
+
+sudo vi /etc/fstab
+
+Add:
+
+UUID=1234-abcd /datadisk ext4 defaults,nofail 0 2
+
+Save and test:
+
+sudo mount -a

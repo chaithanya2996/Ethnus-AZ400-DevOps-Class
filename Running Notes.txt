@@ -22,3 +22,118 @@ Compute Section:
 How to add the disk (Local D/E drive in Windows/Linux)
 How to deploy a static website in Azure VM (windows/Linux).
 How to deploy a statis website in Azure Storage Account.
+
+
+===========================================================================
+Subscription:
+It acts as agreement between u & Microsoft.
+
+Resource Group:
+A Resource Group is like a folder where you keep related Azure resources together.
+
+
+VM
+
+reset password
+
+less ram > high ram
+Scaling -> Increase or decrese compute resrouces 
+2 types of scaling
+Horizontal	-> Scaling out/in -> adding more servers or removing servers
+Vertical	-> Scaling up/down -> adding more power to an existing server.
+
+Website
+-> Web Server Packages:
+windows server: IIS - Internet Information Service - Webserver/Software package.
+Linux server: Nginx, Httpd, Apache2, Tomcat, ....
+
+=========================================================================================
+
+
+Adding Data Disk to Azure VM (Windows & Linux)
+------------------------------------------------
+A Data Disk is an additional disk attached to a VM for Storing Application Data, Databases, Logs, Backups, etc.
+
+
+Example:
+
+OS Disk =127 GB (Windows 127/Linux 127,30 GB OS installed)
+Data Disk = 128 GB (Store files, databases, logs)
+
+Steps: add data disk in azure portal
+1. Navigate to your VM in Azure Portal.
+2. Select Settings -> Disks.
+3. Click + Create and Attach a new disk.
+4. Enter:
+	- Disk Name
+	- Disk Size 
+	- Disk Type (Premium/Standard SSD)
+5. Click Save.
+
+Note: The disk is now attached to the VM, but it must be initialized inside the OS.
+
+
+Windows: 
+Verify New Disk
+
+Open: 
+Server Manager -> Tools -> Computer Management -> Disk Management
+
+Or
+
+Powershell
+diskmgmt.msc
+
+
+Linux:
+===============
+Check Available Disks:
+lsblk
+
+sda = OS Disk
+sdb = New Data Disk
+
+
+Create Partition
+sudo fdisk /dev/sdb
+
+inside fdisk
+
+n	-> New Partition
+p	-> Primary
+1	-> Partition Number
+Enter
+Enter
+w	-> Write Changes
+
+
+
+/dev/sdb1: UUID="680208ff-e0bf-49fc-881a-3d910ee6a0ce" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="7474414b-01"
+
+
+---------------------------------------------------
+Real-Time Scenario:
+-------------------
+1. SQL Server Storage Expansion
+2. IIS Web Server / Nginx Web Server
+3. Linux Application Server
+
+===========================
+Snapshot
+
+Contains a Point-in-time copy of the os disk, 
+if anything goes wrong after our changes, we can create a new disk from this snapshot and recover the VM.
+
+
+
+Linux VM: Add some data.
+And data disk
+
+
+
+
+
+
+
+
+
