@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure DevOps Training - Ethnus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .trainer-info {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .trainer-info h2 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .trainer-info p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .rating-section {
+            margin-bottom: 35px;
+        }
+
+        .rating-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .rating-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .rating-btn {
+            padding: 12px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .rating-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .rating-btn.selected {
+            background: #667eea;
+            color: white;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .star {
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #ddd;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+            transform: scale(1.2);
+        }
+
+        .submission-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .submission-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submission-btn:active {
+            transform: translateY(0);
+        }
+
+        .feedback-message {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback-message.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .feedback-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Welcome to Azure DevOps Training</h1>
+            <p>by <strong>Ethnus</strong></p>
+        </div>
+
+        <div class="trainer-info">
+            <h2>👨‍🏫 Your Trainer</h2>
+            <p><strong>Chaithanya</strong></p>
+            <p>Expert in Azure DevOps and Cloud Infrastructure</p>
+        </div>
+
+        <!-- Course Rating Section -->
+        <div class="rating-section">
+            <h3>📊 How do you rate this course?</h3>
+            <div class="rating-buttons">
+                <button class="rating-btn" data-rating="1">Poor</button>
+                <button class="rating-btn" data-rating="2">Below Average</button>
+                <button class="rating-btn" data-rating="3">Average</button>
+                <button class="rating-btn" data-rating="4">Good</button>
+                <button class="rating-btn" data-rating="5">Excellent</button>
+            </div>
+            <input type="hidden" id="courseRating" value="">
+        </div>
+
+        <!-- Trainer Rating Section -->
+        <div class="rating-section">
+            <h3>⭐ Rate your Trainer (Chaithanya)</h3>
+            <div class="star-rating" id="trainerRating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <input type="hidden" id="trainerRatingValue" value="">
+        </div>
+
+        <button class="submission-btn" onclick="submitRatings()">Submit Ratings</button>
+        <div class="feedback-message" id="feedbackMessage"></div>
+    </div>
+
+    <script>
+        // Course Rating functionality
+        const courseRatingBtns = document.querySelectorAll('.rating-btn');
+        const courseRatingInput = document.getElementById('courseRating');
+
+        courseRatingBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                courseRatingBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                courseRatingInput.value = this.getAttribute('data-rating');
+            });
+        });
+
+        // Trainer Rating (Stars) functionality
+        const stars = document.querySelectorAll('.star');
+        const trainerRatingInput = document.getElementById('trainerRatingValue');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                trainerRatingInput.value = rating;
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < rating; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+
+            // Hover effect for stars
+            star.addEventListener('mouseover', function() {
+                const hoverRating = this.getAttribute('data-value');
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < hoverRating; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+        });
+
+        document.getElementById('trainerRating').addEventListener('mouseleave', function() {
+            const currentRating = trainerRatingInput.value;
+            stars.forEach(s => s.classList.remove('active'));
+            for (let i = 0; i < currentRating; i++) {
+                stars[i].classList.add('active');
+            }
+        });
+
+        // Submit function
+        function submitRatings() {
+            const courseRating = courseRatingInput.value;
+            const trainerRating = trainerRatingInput.value;
+            const feedbackMessage = document.getElementById('feedbackMessage');
+
+            if (!courseRating || !trainerRating) {
+                feedbackMessage.textContent = '❌ Please provide both ratings!';
+                feedbackMessage.className = 'feedback-message error';
+                return;
+            }
+
+            feedbackMessage.textContent = `✅ Thank you! Your ratings have been submitted. Course: ${courseRating}/5, Trainer: ${trainerRating}/5`;
+            feedbackMessage.className = 'feedback-message success';
+
+            // Log the ratings (you can send this to a server)
+            console.log({
+                courseRating: courseRating,
+                trainerRating: trainerRating,
+                timestamp: new Date()
+            });
+
+            // Reset after 3 seconds
+            setTimeout(() => {
+                courseRatingBtns.forEach(b => b.classList.remove('selected'));
+                stars.forEach(s => s.classList.remove('active'));
+                courseRatingInput.value = '';
+                trainerRatingInput.value = '';
+                feedbackMessage.className = 'feedback-message';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

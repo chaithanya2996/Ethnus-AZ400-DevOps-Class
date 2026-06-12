@@ -1,0 +1,56 @@
+Azure Storages:
+====================
+
+What is Data?
+Collection of information or Raw Facts.
+
+How many categories of data?
+3 types
+Structured Data
+Unstructured Data
+Semi-Structured
+
+Google Drive -> what kind of Data do we upload here?
+Structured Data
+Unstructured Data
+Semi-Structured
+
+
+How much of GB Size is available to use -> 15 GB -> it is over/lapsed
+Purchase the storage -> 50, 100, 200, 1TB
+
+Purchased 100 GB for the pay monthly Rs.200 - but u have data of 60 GB -> 40 GB data is wasted/unused space.
+
+Are u accessing the Google Drive data daily? -> no 
+
+Still paying Rs.200? 
+
+are u saving any cost here.
+
+Accessing is should some cost.
+
+Cloud AWS, GCP, Azure.
+
+
+Azure Provided with 4 types of Storages:
+
+- Blob Storage
+- File Share
+- Queue Service
+- Table Service
+
+https://vitdevops12june2026.blob.core.windows.net/mydata/ab.jpg
+
+
+
+
+https://vitdevops12june2026.blob.core.windows.net/cse/pic3.jpg
+
+
+
+
+
+
+
+
+
