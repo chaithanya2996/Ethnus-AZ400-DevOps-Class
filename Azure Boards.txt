@@ -1,0 +1,13 @@
+Azure Boards:
+==============
+it is web-based service that enables teams to plan, track and discuss work across the entire devt process, while it supports agile methodologies, including scrum & Kanban.
+It provides a customizable platform for managing work items, allowing teams to collaborate efficiently and streamline their workflow.
+
+
+Work items
+Boards
+Backlogs
+Sprints
+Queries
+Delivery plans
+Analytics views.

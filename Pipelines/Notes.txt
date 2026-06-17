@@ -1,0 +1,7 @@
+CI-CD:
+======
+CICD - Continuous Integration Continuous Deployment
+CICD - Continuous Integration Continuous Delivery.
+
+GitHub Actions
+Azure Pipelines

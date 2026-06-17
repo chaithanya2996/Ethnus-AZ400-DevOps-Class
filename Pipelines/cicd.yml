@@ -1,0 +1,44 @@
+name: Basic CI pipeline
+
+on:
+  push:
+    branches:
+      - master 
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print Message
+        run: echo "Hello, World!"
+
+      - name: List files
+        run: ls -la
+
+  test:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+        - name: Print Message
+          run: echo "Hello, World!"
+
+        - name: List files
+          run: ls -la        
+
+  deploy:
+      runs-on: ubuntu-latest
+      needs: test 
+      steps:
+        - name: Print Message
+          run: echo "Hello, World!"
+
+        - name: List files
+          run: ls -la        
