@@ -5,3 +5,9 @@ CICD - Continuous Integration Continuous Delivery.
 
 GitHub Actions
 Azure Pipelines
+
+Creating a Sample CI Pipeline in GitHub Actions.
+
+Creating a Sample CI Pipeline for ASP.DotNet Core Application in GitHub Actions.
+
+

@@ -515,9 +515,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1256.3436751546844,
-			"y": -208.77540727108396,
-			"z": 1,
+			"x": -1780.4432431015166,
+			"y": 204.84113635123686,
+			"z": 0.8115061760867259,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -822,9 +822,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:nRnbjn25R8peU-k9lOtmq"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -951,6 +949,43 @@
 				"isAnimated": false
 			},
 			"meta": {}
+		},
+		{
+			"x": 3463.7329582669317,
+			"y": 151.2867755688253,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:exGZhl6bejbZ_ZBaWd3wh",
+			"type": "geo",
+			"props": {
+				"w": 139.24724583725583,
+				"h": 60.38154907987217,
+				"geo": "rectangle",
+				"dash": "draw",
+				"growY": 0,
+				"url": "",
+				"scale": 1,
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"size": "m",
+				"font": "draw",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "acc2ujGV",
+			"typeName": "shape"
 		},
 		{
 			"x": 95,
@@ -1143,6 +1178,48 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2376.8367078239307,
+			"y": -81.07828283320441,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:84_ETJ6jb9RgLMKN9sT_N",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 995.609375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Creating a Sample CI Pipeline for ASP.DotNet Core Application in GitHub Actions."
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aZgmA7RV",
+			"typeName": "shape"
+		},
+		{
 			"x": 92,
 			"y": 212,
 			"rotation": 0,
@@ -1275,6 +1352,37 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2571.564763699025,
+			"y": 108.15709765463095,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Eb5TMYUomII-PDjxBIlBp",
+			"type": "draw",
+			"props": {
+				"segments": [
+					{
+						"type": "free",
+						"path": "AAAAAAAAAAAAAAA/7DzsvAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DzsPAAA9jzsPAAA7DzsPAAA7Dz2PAAA7DwAAAAA9jzsPAAA7EAAAAAAAADsPAAA7DzsPAAA7DwAAAAA9jwAAAAA7Dz2PAAA7DzsPAAA7DwAAAAA9jwAAAAA7EAAAAAA7DzsPAAA7DwAAAAA8UDsPAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAAAAD2PAAA8UAAAAAAAADsPAAA7DwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAAAADsPAAA7EAAAAAA8UDsPAAA7DwAAAAAAADsPAAA7EAAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7ED2PAAA9jzsPAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DzsPAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DzsPAAA8UAAAAAA7DwAAAAA7EAAAAAA9jwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7EAAAAAA8UAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAA7DwAAAAA8UAAAAAA7Dz2PAAA7EAAAAAA9jwAAAAA7DwAAAAA7EAAAAAA9jwAAAAA7EAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAA7DwAAAAA9jwAAAAA7EAAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7EAAAAAA9jwAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAAYUMAAAAA8UAAAAAA7DwAAAAA7EAAAAAA8UAAAAAA7EAAAAAAZkMAAAAA7EAAAAAA8UAAAAAA7EAAAAAA9jwAAAAA7EAAAAAA7EAAAAAA9jwAAAAA7EAAAAAA7DwAAAAAZkMAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAA7DwAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAA7EAAAAAA7DwAAAAAZkMAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAA7EAAAAAAZkMAAAAA7EAAAAAA8UAAAAAA7DwAAAAA7EAAAAAAZkMAAAAA8UAAAAAA7EAAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UDsPAAA7EDsPAAAZkMAAAAA7DwAAAAA8UAAAAAA7EDsPAAA8UAAAAAAYUMAAAAAZkPsPAAA7EAAAAAA9jwAAAAAYUP2PAAAZkPsPAAA7EAAAAAAZkMAAAAAZkMAAAAAYUMAAAAAZkMAAAAAZkMAAAAAZkMAAAAAYUMAAAAAZkMAAAAAZkMAAAAA7EAAAAAAZkMAAAAAYUMAAAAA8UAAAAAAZkMAAAAA7EAAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAAYUMAAAAA8UAAAAAA7EAAAAAA9jwAAAAA7EAAAAAA8UAAAAAAYUMAAAAA7kTsPAAA8UDsPAAAYUMAAAAAZkMAAAAA7EAAAAAAZkP2PAAAZkMAAAAAYUMAAAAA7kQAAAAAZkMAAAAA7EAAAAAA8UAAAAAA7EAAAAAAZkMAAAAA8UAAAAAAYUMAAAAA7DwAAAAA8UAAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UDsPAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAAYUMAAAAA9jwAAAAA7EAAAAAAZkMAAAAA7EAAAAAA7DwAAAAAZkMAAAAAZkPsPAAAYUPsPAAA8UAAAAAA7EAAAAAA8UAAAAAA7EAAAAAA8UAAAAAAYUMAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAAZkP2PAAA7DzsPAAA7DwAAAAA8UAAAAAA7DwAAAAA7EDsPAAA7DwAAAAA8UAAAAAA7EAAAAAA8UAAAAAAZkPsPAAA7EAAAAAA7EAAAAAA8UDsPAAA7EAAAAAAZkMAAAAAZkP2PAAAYUMAAAAA8UAAAAAA7EAAAAAAZkMAAAAA7EDsPAAA8UAAAAAA7EAAAAAA8UAAAAAA7EDsPAAAZkPsPAAA7Dz2PAAA8UAAAAAA7EAAAAAA8UAAAAAA7DzsPAAA7EAAAAAAZkMAAAAA7EAAAAAA8UAAAAAA7EAAAAAAZkMAAAAA7EAAAAAA9jwAAAAA7EAAAAAA8UAAAAAA7EDsPAAA7EAAAAAA9jwAAAAA7EAAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7EAAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7EAAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DzsPAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAAAADsPAAA8UD2PAAA7DwAAAAA7DwAAAAA7DwAAAAA9jzsPAAA7DwAAAAA7DwAAAAA7DwAAAAA9jzsPAAA7DwAAAAA7DwAAAAAAADsPAAA7EAAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7Dz2PAAA9jwAAAAA7EAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7EAAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7EAAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7EAAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DzsPAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7EAAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7EAAAAAA9jzsPAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAAAADsPAAA7DwAAAAA7DwAAAAA7DwAAAAA8UAAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAAAAD2PAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7DwAAAAA9jwAAAAA7DwAAAAA7DwAAAAA7EAAAAAA"
+					}
+				],
+				"color": "black",
+				"fill": "none",
+				"dash": "draw",
+				"size": "m",
+				"isComplete": true,
+				"isClosed": false,
+				"isPen": false,
+				"scale": 1,
+				"scaleX": 1,
+				"scaleY": 1
+			},
+			"parentId": "page:page",
+			"index": "adWzIUdt",
+			"typeName": "shape"
+		},
+		{
 			"x": 242,
 			"y": 1146,
 			"rotation": 0,
@@ -1385,6 +1493,87 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 2421.2270292552616,
+			"y": 10.80725321973506,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:Up_ASkAa1rRoLP0ozDR33",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 746.65625,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Visual Studio "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://ASP.NET",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "ASP.NET"
+								},
+								{
+									"type": "text",
+									"text": " Core Application -> Selected the Language Version "
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": ".NET SDK 10.0.x "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aaniUzht",
+			"typeName": "shape"
+		},
+		{
 			"meta": {},
 			"id": "page:page",
 			"name": "Page 1",
@@ -1402,13 +1591,13 @@
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:color": "red",
-				"tldraw:geo": "arrow-down"
+				"tldraw:color": "black",
+				"tldraw:geo": "rectangle"
 			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "cross",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -1772,6 +1961,164 @@
 			},
 			"parentId": "page:page",
 			"index": "aDCK9SfV",
+			"typeName": "shape"
+		},
+		{
+			"x": 3193.8644021752584,
+			"y": 109.38937416646507,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:F6W67i_URbVZ3wBZftejq",
+			"type": "text",
+			"props": {
+				"color": "red",
+				"size": "m",
+				"w": 663.4375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"attrs": {
+						"dir": "auto"
+					},
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "<Project Sdk=\""
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "link",
+											"attrs": {
+												"href": "http://Microsoft.NET",
+												"target": "_blank",
+												"rel": "noopener noreferrer nofollow",
+												"class": null
+											}
+										}
+									],
+									"text": "Microsoft.NET"
+								},
+								{
+									"type": "text",
+									"text": ".Sdk.Web\">"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "  <PropertyGroup>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    <TargetFramework>"
+								},
+								{
+									"type": "text",
+									"marks": [
+										{
+											"type": "bold"
+										}
+									],
+									"text": "net10.0"
+								},
+								{
+									"type": "text",
+									"text": "</TargetFramework>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    <Nullable>enable</Nullable>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    <ImplicitUsings>enable</ImplicitUsings>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "    <RootNamespace>Ethus_Demo</RootNamespace>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "  </PropertyGroup>"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "</Project>"
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "ab8qNx9V",
 			"typeName": "shape"
 		},
 		{

@@ -1,0 +1,83 @@
+YAML Syntax:
+
+YAML means YAML Ain't Markup Language.
+
+It is mainly used for Configuation Files.
+
+In DevOps YAML is used in 
+- GitHub Actions
+- Azure DevOps Pipelines
+- Kubernetes
+- Ansible 
+................
+
+====================
+
+1. Key-Value Pair
+
+Basic Syntax:
+----------------
+name: Chaithanya
+role: Trainer
+technlogy: DevOps
+
+name = Chaithanya
+role = Trainer
+technlogy = DevOps
+
+
+2. Indentation:
+YAML uses spaces, not tabs.
+
+Example:
+student1: 
+  name: Manan
+  course: Azure DevOps
+  duration: 40 hours
+
+student2: 
+  name: Rishi
+  course: Azure DevOps
+  duration: 40 hours  
+
+3. Lists / Arrays:
+use hyphen - for list items
+
+Example:
+prog_languages:
+  - C
+  - C++
+  - Java
+  - Python
+
+tools:
+  - GitHub
+  - Docker
+  - Kubernetes
+  - Terraform
+
+branches:
+  - main
+  - master
+  - test
+
+4. Nested Objects:
+
+# This is employee information
+employee:
+  name: Chaithanya # name of the employee
+  message: "Welcome to YAML Sessions"
+  message: 'Welcome to YAML Sessions'
+  time: "19:55 PM"
+  version: "1.3.4"
+  age: 29
+  price: 10000
+  is_active: true
+  is_completed: false
+  skills:
+    - Azure
+    - GitHub Actions
+    - Docker
+  address:  # address of the employee
+    city: Nellore
+    state: Andhra Pradesh

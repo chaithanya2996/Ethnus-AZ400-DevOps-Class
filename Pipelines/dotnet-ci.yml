@@ -1,0 +1,45 @@
+name: ASP.NET Core CI Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ASP.NET Core App
+    runs-on: windows-
+
+    env:
+      PROJECT_PATH: Ethus-Demo/Ethus-Demo.csproj
+      DOTNET_VERSION: "10.0.x"
+      BUILD_CONFIGURATION: Release
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - name: Build the project
+        run: dotnet build ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+
+      - name: Publish application
+        run: dotnet publish ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --output ./publish
+
+      - name: upload published artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: aspnetcore-app
+          path: ./publish
