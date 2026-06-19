@@ -11,3 +11,36 @@ Creating a Sample CI Pipeline in GitHub Actions.
 Creating a Sample CI Pipeline for ASP.DotNet Core Application in GitHub Actions.
 
 
+Azure Pipelines:
+==================
+In real time, developer do not manaully copy the code  to servers directly, every time they make a change. Instead they use CI/CD Pipelines.
+
+CI - dev pushes code, the Pipeline will automatically restore dependencies, builds the Application, runs tests, and create a deployable artifact.
+
+CD - Continuous Delivery or Continuous Deployment
+Once the build is successful, the Application package is deployed to environments 
+like DEV, QA, Stagging or Production.
+
+Azure Pipelines is the Azure DevOps service that helps us automate this entire flow.
+
+Microsoft describes Azure Pipelines as a service that automate tasks from simple scripts to complete CI/CD solutions, and it supports both YAML-based and Classic Pipelines. 
+Microsoft also recommends YAML for New Pipelines, while existing Classic Pipelines can continue or be migrated.
+
+Demo: 
+
+Our team has created an ASP.NET Core Web Application.
+
+The developer pushes the code to Azure Repos or GitHub. 
+Our CI Pipeline will build and package the Application.
+Our CD Pipeline will deploy it to Azure APP Service or Azure VM or Docker or Kubernetes.
+
+
+Create a ASP.NET Core Web Application using Visual Studio / Visual Studio Code
+Try to Push this Azure Repos
+Go to Organization Settings -> under Pipelines -> Under Settings -> 
+Disable creation of classic build pipelines
+Disable creation of classic release pipelines
+GO to Pipelines, Create a CI Pipeline -> Select Empty and Add the tasks related to 
+ASP.NET Core Tasks. 
+Go to Pipelines, create a CD Pipeline -> Select Azure APP Service Deployment ( make sure to create an APP Service in Azure).
+Make CI-CD Trigger Enabled.
