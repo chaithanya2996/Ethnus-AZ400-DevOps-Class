@@ -44,3 +44,33 @@ GO to Pipelines, Create a CI Pipeline -> Select Empty and Add the tasks related 
 ASP.NET Core Tasks. 
 Go to Pipelines, create a CD Pipeline -> Select Azure APP Service Deployment ( make sure to create an APP Service in Azure).
 Make CI-CD Trigger Enabled.
+
+
+A Few Important aspects we need to in Azure Pipeline.
+
+https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/dotnet-core-cli-v2?view=azure-pipelines
+https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#build-variables-devops-services
+
+
+Security at every Stage:
+=============================
+
+
+Java Application:
+===================
+Java SDK 17 or 21
+Maven
+Git
+VS Code or Intellij or Eclipse
+
+React JS Application:
+=========================
+
+
+
+Buiding and Deployment 
+we need to take consideration for some Applications
+
+Dotnet, Java, NodeJS(React, Angular), Python, 
+
+CI/CD concepts.

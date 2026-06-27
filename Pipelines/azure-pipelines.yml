@@ -1,0 +1,73 @@
+trigger:
+    branches:
+        include:
+            - master
+        exclude:
+            - develop
+
+stages:
+    - stage: stage1
+      jobs:
+          - job: Job1
+            pool:
+                name: vit-agent-pool
+                vmImage: ubuntu-latest
+            steps:
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task1"
+                  inputs:
+                      script: echo Hello Students!
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task2"
+                  inputs:
+                      script: echo Hello Trainer!
+
+          - job: Job2
+            pool:
+                name: vit-agent-pool
+                vmImage: ubuntu-latest
+            dependsOn: Job1
+            steps:
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task1"
+                  inputs:
+                      script: echo Hello Students!
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task2"
+                  inputs:
+                      script: echo Hello Trainer!
+
+
+    - stage: stage2
+      dependsOn: stage1
+      jobs:
+          - job: Job1
+            pool:
+                name: vit-agent-pool
+                vmImage: ubuntu-latest
+            steps:
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task1"
+                  inputs:
+                      script: echo Hello Students!
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task2"
+                  inputs:
+                      script: echo Hello Trainer!
+
+          - job: Job2
+            pool:
+                name: vit-agent-pool
+                vmImage: ubuntu-latest
+            dependsOn: Job1
+            steps:
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task1"
+                  inputs:
+                      script: echo Hello Students!
+                - task: CmdLine@2
+                  displayName: "Print Hello Welcome Message - Task2"
+                  inputs:
+                      script: echo Hello Trainer!
+
+                      

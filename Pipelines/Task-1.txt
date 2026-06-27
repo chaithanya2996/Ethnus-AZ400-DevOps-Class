@@ -1,0 +1,138 @@
+i have a ASP.NET core application which I uploaded in Azure Repos. 
+Now I want to create a Yaml for CI/CD practices about this application. 
+so how the Yaml pipeline will looks like?
+
+The exact YAML depends on where you want to deploy. 
+Here's a common starting point for CI that runs on your self-hosted agent pool.
+
+CI Pipeline
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: VIT-Agent-Pool
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+# Install .NET SDK (optional if already installed on self-hosted agent)
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'
+
+# Restore packages
+- task: DotNetCoreCLI@2
+  displayName: 'Restore Packages'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+# Build
+- task: DotNetCoreCLI@2
+  displayName: 'Build Solution'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+# Run tests
+- task: DotNetCoreCLI@2
+  displayName: 'Run Tests'
+  inputs:
+    command: 'test'
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+# Publish application
+- task: DotNetCoreCLI@2
+  displayName: 'Publish Application'
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+# Publish artifact
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifact'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+
+
+CI + CD to IIS Server
+
+If your application is hosted on a Windows Server with IIS, add a deployment stage:
+
+trigger:
+- main
+
+pool:
+  name: VIT-Agent-Pool
+
+variables:
+  buildConfiguration: 'Release'
+
+stages:
+
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: build
+        projects: '**/*.csproj'
+        arguments: '--configuration $(buildConfiguration)'
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: publish
+        publishWebProjects: true
+        arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+        zipAfterPublish: true
+
+    - publish: $(Build.ArtifactStagingDirectory)
+      artifact: drop
+
+- stage: Deploy
+  dependsOn: Build
+  jobs:
+  - deployment: DeployToIIS
+    environment: Production
+
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+
+          - download: current
+            artifact: drop
+
+          - powershell: |
+              Write-Host "Deploying application..."
+              # Add IIS deployment commands here
+            displayName: 'Deploy to IIS'
+
+
+CI + CD to Azure App Service
+
+If you're deploying to Azure App Service:
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'My-Service-Connection'
+    appType: 'webApp'
+    appName: 'my-webapp'
+    package: '$(Pipeline.Workspace)/drop/**/*.zip'
