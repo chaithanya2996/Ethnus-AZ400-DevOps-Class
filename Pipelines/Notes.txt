@@ -74,3 +74,5 @@ we need to take consideration for some Applications
 Dotnet, Java, NodeJS(React, Angular), Python, 
 
 CI/CD concepts.
+
+Python App using CI CD under Azure Pipelines

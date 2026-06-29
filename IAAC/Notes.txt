@@ -1,0 +1,78 @@
+Azure Powershell
+
+Powershell Commands -> Cmdlets -> Object based of structure
+
+Syntax:
+-----------
+English-Verb + Noun
+
+Example: Get-COmmand, Set-Command, New-Item, Get-childitem, Get-Service.
+
+Azure Powershell = Azure + Powershell => commands
+
+Connect-AZ Account
+
+New-AZResourceGroup -Name nameofrg -Location Locationname
+
+VM
+Storages
+App Services
+
+
+Azure CLI:
+------------------------
+Linux COmmnands or Bash Commands
+
+az login 
+
+az group create --name nameofrg --Location Locationname
+
+VM
+Storage Accoiunts
+App services
+
+az login --use-device-code
+
+Ex: Resource Group creation:
+
+az group create -l westus -n MyResourceGroup
+az group create -n vit-devops-rg1 -l eastus
+
+az storage account create -n mystorageaccount -g MyResourceGroup -l westus --sku Standard_LRS
+az stroage account create -n vitstr1acc29june2026 -g vit-devops-rg1 -l eastus --sku Standard_LRS
+
+
+suppose I got the requirement like 30  students joined for internship in Ethnus.
+for every people I need to allocate
+
+30 -RGs -> Create 30 VMs Linux/windows -> 30 Stroage Accounts
+1 RG - 1 VM - 1 SA  10 mins
+2 RG - 2 VM - 2 SA  10 mins
+3 RG - 3 VM - 3 SA  10 mins
+.....................
+.....................
+29 RG - 29 VM - 29 SA
+30 RG - 30 VM - 30 SA 
+
+
+Disadvantages:
+===============
+1. Manual Effort 
+2. will make some mistakes
+3. time consuming
+4. lots of write hundreds of commands
+5. rerunning scripts
+
+Terraform Tool: 
+--------------------
+Its a third-party Tool u can create infrasture in cloud (AWS, Azure, GCP) - Hashicorp
+Azure RM Module
+Terraform Syntax -> Hashicorp Langauge - HCL
+
+Azure Bicep:
+-----------------
+Its compltely managed by Azure Microsoft
+Cloud native tool by microsoft.
+az cli needed.
+ARM Json -> Bicep Syntax
+100 Lines -> 10-20 Lines code
