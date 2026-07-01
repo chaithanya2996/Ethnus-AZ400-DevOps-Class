@@ -1,0 +1,11 @@
+5-10
+
+
+Deploying Java App to follow Ci-CD Process
+
+Deplying Python App
+Dotnet App
+REact App
+Angular APP
+
+Docker based

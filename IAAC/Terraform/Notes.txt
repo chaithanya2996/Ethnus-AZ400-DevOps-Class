@@ -1,0 +1,24 @@
+Terraform:
+==========
+
+IAAC Tool which is used to Automate Infra.
+
+Instead of creating the resources manually u can create by using Some code.
+
+az group create --name vit-rg1 --location eastus 
+
+
+https://developer.hashicorp.com/terraform/install
+
+
+Install Terraform on Windows
+Method 1: Using Winget (Recommended)
+Open PowerShell as Administrator.
+Run:
+winget install Hashicorp.Terraform
+Verify the installation:
+terraform -version
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
